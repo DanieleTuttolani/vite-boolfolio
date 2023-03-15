@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import HelloWorld from './components/HelloWorld.vue';
 const appUrl = 'http://127.0.0.1:8000'
 export default {
   data() {
@@ -21,12 +22,15 @@ export default {
   mounted() {
     this.fetchProjectIndex()
   },
-
+  components: { HelloWorld }
 }
 </script>
 
 <template>
-  <h1>vite di daniele</h1>
+  <div class="container text-center">
+    <h1>Test Api daniele</h1>
+    <HelloWorld :projects="projects" />
+  </div>
 </template>
 
 <style scoped></style>
