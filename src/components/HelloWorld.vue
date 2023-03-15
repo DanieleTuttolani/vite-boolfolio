@@ -3,6 +3,7 @@ export default {
     data() {
         return {
             name: 'main',
+            img_path: 'http://127.0.0.1:8000/storage/'
         }
     },
     props: {
@@ -12,11 +13,18 @@ export default {
 </script>
 
 <template>
-    <div class="container text-center">
-        <li v-for="proj in projects">
-            <p>{{ proj.title }}2</p>
-        </li>
+    <div class="container text-center row ">
+        <div class="card p-0 m-3" style="width: 18rem;" v-for="proj in projects" :key="proj.id">
+            <img :src="img_path + proj.img" class="card-img-top" :alt=proj.title>
+            <div class="card-body">
+                <p class="card-text">{{ proj.description }}</p>
+                <p class="card-text">{{ proj.proj_link }}</p>
+                <p class="card-text">{{ proj.collab }}</p>
+                <p class="card-text">{{ proj.description }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
 <style scoped></style>
+`
