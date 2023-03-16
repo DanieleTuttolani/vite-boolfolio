@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import HelloWorld from './components/HelloWorld.vue';
+
 const appUrl = 'http://127.0.0.1:8000'
 export default {
   data() {
@@ -22,14 +22,14 @@ export default {
   mounted() {
     this.fetchProjectIndex()
   },
-  components: { HelloWorld }
+  components: {}
 }
 </script>
 
 <template>
   <div class="container text-center">
     <h1>Test Api daniele</h1>
-    <HelloWorld :projects="projects" />
+    <RouterView :projects="projects" />
   </div>
 </template>
 
